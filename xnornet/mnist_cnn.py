@@ -1,8 +1,3 @@
-'''Trains a simple xnor CNN on the MNIST dataset.
-Modified from keras' examples/mnist_mlp.py
-Gets to 98.18% test accuracy after 20 epochs using tensorflow backend
-'''
-
 from __future__ import print_function
 import numpy as np
 from skimage import io
@@ -63,8 +58,8 @@ def to_categorical(y, num_classes=None):
     return categorical
 
 
-w = 100
-h = 100
+w = 224
+h = 224
 c = 3
 
 
