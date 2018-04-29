@@ -154,13 +154,9 @@ model = Sequential()
 
 
 # conv1
-model.add(Conv2D(32, kernel_size=(3, 3), input_shape=(img_rows, img_cols, nb_channel),
-                 strides=(1, 1),
-                 activation='relu',
-                 name='conv1'))
-# model.add(XnorConv2D(32, kernel_size=(5, 5), input_shape=(img_rows, img_cols, nb_channel),
-#                      H=H, kernel_lr_multiplier=kernel_lr_multiplier,
-#                      padding='same', use_bias=use_bias, name='conv1'))
+model.add(XnorConv2D(32, kernel_size=(3, 3), input_shape=(img_rows, img_cols, nb_channel),
+                     H=H, kernel_lr_multiplier=kernel_lr_multiplier,
+                     padding='same', use_bias=use_bias, name='conv1'))
 model.add(MaxPooling2D(pool_size=(4, 4), name='pool1'))
 model.add(BatchNormalization(epsilon=epsilon, momentum=momentum, axis=1, name='bn1'))
 model.add(Activation('relu', name='act1'))
